@@ -8,7 +8,12 @@ interface Props {
   description?: string;
 }
 
-const { title = "Your New Business", description = "I do breathwork in Medellín for locals and English foreigners- here is my instagram https://www.instagram.com/5dbreathworka help me create a website for individual coaching clients and to promote my reset sessions at Nordika in Ciudad de Rio" } = Astro.props;
+const {
+  title = "Aliento — 5D Breathwork in Medellín",
+  description = "Premium 5D Breathwork coaching in Medellín for expats, digital nomads, and locals. Private sessions and group Reset experiences at Nordika's rooftop wellness space in Ciudad del Río."
+} = Astro.props;
+
+const siteUrl = "https://breathwork-medell-n.onrender.com";
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
@@ -16,20 +21,41 @@ const { title = "Your New Business", description = "I do breathwork in Medellín
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Aliento" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={siteUrl} />
+
     <title>{title}</title>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Your New Business",
-      "description": "I do breathwork in Medellín for locals and English foreigners- here is my instagram https://www.instagram.com/5dbreathworka help me create a website for individual coaching clients and to promote my reset sessions at Nordika in Ciudad de Rio",
-      "url": "https://breathwork-medell-n.onrender.com"
+      "@type": "LocalBusiness",
+      "name": "Aliento",
+      "description": "Premium 5D Breathwork coaching in Medellín. Private sessions and group Reset experiences at Nordika, Ciudad del Río.",
+      "url": "https://breathwork-medell-n.onrender.com",
+      "sameAs": ["https://www.instagram.com/5dbreathworka"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Medellín",
+        "addressCountry": "CO"
+      },
+      "priceRange": "$$"
     }
     </script>
   </head>
-  <body class="min-h-screen flex flex-col bg-surface-50 text-surface-900 font-body antialiased">
+  <body class="min-h-screen flex flex-col font-body antialiased" style="background: oklch(0.95 0.018 68); color: oklch(0.22 0.04 38);">
     <Header />
     <main class="flex-1">
       <slot />
