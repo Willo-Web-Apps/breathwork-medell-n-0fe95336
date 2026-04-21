@@ -1,0 +1,20 @@
+# Your New Business
+
+> URL: https://breathwork-medell-n.onrender.com
+
+> I do breathwork in Medellín for locals and English foreigners- here is my instagram https://www.instagram.com/5dbreathworka help me create a website for individual coaching clients and to promote my reset sessions at Nordika in Ciudad de Rio
+
+## About
+
+Your New Business is an AI-powered business. This file provides a brief overview for
+language model crawlers and AI assistants.
+
+## Pages
+
+- /: Home — learn about Your New Business and get started
+- /blog: Blog — articles, updates, and insights
+- /blog/[slug]: Individual blog posts
+
+## Contact
+
+For inquiries, please visit our website.
